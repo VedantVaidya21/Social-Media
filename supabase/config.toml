@@ -1,0 +1,7 @@
+project_id = "sxluoqwjenmfojrewzao"
+
+[functions.analyze-content]
+verify_jwt = false
+
+[functions.extract-text]
+verify_jwt = false
