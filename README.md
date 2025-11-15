@@ -1,61 +1,85 @@
 📄 Social Media Content Analyzer
 
-The Social Media Content Analyzer is a web application that allows users to upload documents (PDFs, Word files, images, and text files), extract readable text from them, and generate AI-powered suggestions to improve social media engagement.
-This project demonstrates real-world problem-solving skills across file processing, OCR, API integration, and frontend engineering.
+A web-based application that allows users to upload documents (PDFs, Word files, text files, images) and extracts text using PDF parsing and OCR.
+The extracted content is analyzed by an AI model to generate engagement-focused improvements suitable for social media posts.
+
+This project demonstrates real-world skills in:
+
+File processing
+
+OCR
+
+AI model integration
+
+Frontend engineering
+
+API development
+
+Deployment
+
+🌐 Live Demo
+
+Your project is deployed here:
+
+👉 https://social-media-content-analyser-npgmdbrb5.vercel.app
 
 🚀 Features
-1. Multi-Format File Upload
+✅ Multi-format File Upload
 
-Supports uploading the following:
+Supports the following file types:
 
-PDF files (.pdf)
+PDF (.pdf)
 
-Word documents (.docx)
+Word Files (.docx)
+
+Text Files (.txt)
 
 Images (.jpg, .jpeg, .png)
 
-Text files (.txt)
+✅ Intelligent Text Extraction
 
-2. Text Extraction
+PDF text extraction using pdf-parse
 
-PDF Parsing using pdf-parse
+Word file text extraction using docx
 
-OCR for Images using tesseract.js
+OCR for images using Tesseract.js
 
-DOCX Extraction using docx
+Plain text file reading
 
-Plain text reading for .txt files
+✅ AI-Powered Social Media Analysis
 
-3. AI-Powered Analysis
-
-Generates:
-
-Engagement improvement suggestions
+After extracting text, the AI suggests:
 
 Better captions
 
 Trending hashtags
 
-Tone analysis
+Engagement improvements
+
+Tone classification
 
 Readability score
 
-4. Modern UI
+✅ Modern Frontend
+
+Next.js 14 (App Router)
+
+React + TypeScript
+
+Tailwind CSS
+
+Framer Motion animations
+
+Drag-and-drop upload
 
 Clean, responsive interface
 
-Drag-and-drop upload area
-
-Loading indicators
-
-Error handling
-
-Smooth animations using Framer Motion
-
-🛠 Tech Stack
+🛠️ Tech Stack
 Frontend
 
-Next.js 14 (App Router)
+Next.js 14
+
+React
 
 TypeScript
 
@@ -73,20 +97,24 @@ Next.js API Routes
 
 pdf-parse
 
-tesseract.js
-
 docx
 
-OpenAI API / LLM integration
+tesseract.js
+
+OpenAI API
+
+Deployment
+
+Vercel (recommended and used)
 
 📁 Folder Structure
 project/
 │
 ├── app/
 │   ├── api/
-│   │   ├── extract/route.ts
-│   │   └── analyze/route.ts
-│   ├── page.tsx
+│   │   ├── extract/route.ts   # Text extraction logic
+│   │   └── analyze/route.ts   # AI analysis logic
+│   ├── page.tsx               # UI
 │   └── globals.css
 │
 ├── components/
@@ -99,88 +127,101 @@ project/
 ├── public/
 ├── lib/
 │   └── utils.ts
+├── .env.example
+├── .gitignore
 ├── package.json
 ├── tailwind.config.ts
 └── README.md
 
 ⚙️ How It Works
-1. Upload File
+1️⃣ Upload a file
 
-User uploads a document via drag-and-drop or file picker.
+User can drag & drop or select any supported file.
 
-2. Text Extraction
+2️⃣ Text is extracted
 
-Backend determines file type:
+Backend API:
 
-.pdf → extracted using pdf-parse
+Detects file type
 
-.docx → read using docx parser
+Extracts the text (PDF parser / Word parser / OCR)
 
-.txt → read directly
+Cleans and returns the text
 
-Image → OCR using Tesseract
+3️⃣ AI Analysis
 
-Text is returned as JSON.
+Extracted text is forwarded to an AI model which generates:
 
-3. AI Analysis
-
-The extracted text is sent to the analysis API, which uses an AI model to generate insights and suggestions.
-
-4. Display Results
-
-A clean UI displays:
-
-Improved captions
+Improved caption
 
 Hashtags
 
-Engagement tips
-
 Tone
+
+Engagement tips
 
 Readability score
 
-▶️ Running the Project Locally
-1. Clone the Repository
+4️⃣ Display results
+
+Frontend animates and displays results cleanly.
+
+▶️ Run Locally
+1. Clone the repository
 git clone https://github.com/VedantVaidya21/Social-Media.git
 cd Social-Media
 
-2. Install Dependencies
+2. Install dependencies
 npm install
 
-3. Add Environment Variables
+3. Add environment variables
 
 Create .env file:
 
 OPENAI_API_KEY=your_key_here
 
-4. Start Development Server
+4. Start development server
 npm run dev
 
 
-Project runs at:
+Project opens at:
 👉 http://localhost:3000
 
-🧪 Testing
+🧪 Testing Instructions
 
-Upload sample files:
+Upload any of these:
 
-PDF with text
+PDF with paragraphs
 
-Screenshot of a quote (OCR test)
+DOCX file
 
-DOCX document
+A screenshot with text (OCR test)
 
-Plain text file
+Text post in .txt file
 
-Verify extracted text + AI analysis.
+Verify:
 
-📦 Deployment
+Extracted text accuracy
 
-Easily deployable on Vercel (recommended).
-Environment variables must be set in project settings.
+AI suggestions
 
-👨‍💻 Author
+Formatting
+
+Loading states
+
+☁️ Deployment
+
+Easiest method: Vercel
+
+Steps:
+
+npm i -g vercel
+vercel
+vercel --prod
+
+
+Set OPENAI_API_KEY in Vercel Environment Variables.
+
+👤 Author
 
 Vedant Vaidya
-Simply open [Lovable](https://lovable.dev/projects/716b22b4-9e76-4aee-85e5-83bb6444a35a) and click on Share -> Publish
